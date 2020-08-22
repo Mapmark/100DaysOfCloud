@@ -10,15 +10,12 @@
 5. Update your main README to link back to your Day Journey article
 4. If you need ideas go to [#100DaysOfCloudIdeas](https://github.com/100DaysOfCloud/100DaysOfCloudIdeas)
 
-## How to use this template:
-Fill in your details where you see this icon ✍️
-We have provided a sample Day Journey entry staring at 0. You can delete this example.
 
 ## Markus's Cloud Journey
 
 Hello, my name is Markus! I am a Security Engineer who is looking to further his skills and learn more about AWS.
 
-I initially started this challenge to continue my journey and grow my knowledge in AWS. For the past 2 years or so, I've been having a "bug" to do more AWS work, as well as learn more about applying a DevOps mindset. 
+I initially started this challenge to continue my journey and grow my knowledge in AWS. For the past 2 years or so, I've been having a "bug" to do more AWS projects, as well as learn more about applying a DevOps mindset. 
 
 I've been havving a HUGE 'crush' per-se on Terraform, and believe that utilizing Infastructure as Code (IAC) is rapidly becoming a new avenue that can help set up lab environments and create reusable code for different projects. 
 
