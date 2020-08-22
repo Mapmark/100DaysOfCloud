@@ -1,52 +1,45 @@
+<!-- This template removes the micro tutorial for a quicker post and removes images for a full template check out the 000-DAY-ARTICLE-LONG-TEMPLATE.MD-->
+
 **Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+![Automation](./images/AutomateEverything.jpg)
 
-# New post title here
+# Infastructure As Code 
 
-## Introduction
+## Building Reusable code
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+Think I've explained this before in my first post when I started this journey. If I have to do it more than once, I am going to automate the process!
 
-## Prerequisite
+Today was mainly spent on further reading about Terraform, and applying the knowledge that I already know into my first "mini" project. 
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
 
-## Use Case
+These days, its increasingly crucial to automate your infastructure as applications can be deployed into production  hundred of times per day. In additiona, infastructure is fleeting and can be provisioned or deprovisioned in response to load. 
 
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
+Let's say you're building an application, and you've chosen a public cloud, lets say AWS. We've decided to build our application in Kubernetes (don't die from this one folks), so we'll have a Kubernetes application stack. Next, let's say after a week of development, we decide to bring in a VM that hosts legacy application that hasn't been modernized yet. In order to connect those two together, we'll need to use a virtual private cloud (VPC).
 
-## Cloud Research
+So now, we have a pretty simple infastructure in place. Now, we develop this, everything is great, everything is documented, wonderful and now its ready to begin to be moved into a test phase. In best practices, we should create a whole new environment that mimics the dev environment that we created. To do so, let's recall and look into the documentation that we made while setting up the environment. But, what if I forget to document one of the configs, or the platform is different on how it handles provisioning the infastructure... Regardless, the two environments are not the same. 
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+So how do we fix this problem? Infastructure as code. 
 
-## Try yourself
+## Introducing Terraform!
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
+- Infrastructure as Code (IaC) is the process of managing and provisioning servers through machine-readable definition files. 
+- Rapidly build dev/ test environments 
+- Similar to cloudformation, however is agnostic and supports various cloud providers
+- written in GO, syntax being HashiCorp Configuration Language (HCL)
+- State files stores information about real world resources of your configuration -  outputted in JSON. 
 
-### Step 1 — Summary of Step
 
-![Screenshot](https://via.placeholder.com/500x300)
+## Okay, What's the next step?
 
-### Step 1 — Summary of Step
+Well, not to spoil too much for the next day, however- Let's automate a lab environment!
 
-![Screenshot](https://via.placeholder.com/500x300)
+Here's a small sneak peak to see what's in store for the next day. 
 
-### Step 3 — Summary of Step
+![sneak](./images/SneakPeak.png)
 
-![Screenshot](https://via.placeholder.com/500x300)
-
-## ☁️ Cloud Outcome
-
-✍️ (Result) Describe your personal outcome, and lessons learned.
-
-## Next Steps
-
-✍️ Describe what you think you think you want to do next.
 
 ## Social Proof
 
-✍️ Show that you shared your process on Twitter or LinkedIn
 
-[link](link)
+
+[Linkedin](https://www.linkedin.com/posts/markus-mabson-86917a133_100daysofcloud-activity-6702976115050332160-xC_r)

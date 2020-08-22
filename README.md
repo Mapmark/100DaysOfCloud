@@ -25,8 +25,8 @@ At the end of of the challenge on day 100, I would like to sit and test for my A
 
 ## Stepping out the door
 
-- [ ] ☁️ 1 > [My First Day](Journey/001/Readme.md)
-- [ ] ☁️ 2 > [](Journey/002/Readme.md)
+- [X] ☁️ 1 > [My First Day](Journey/001/Readme.md)
+- [X] ☁️ 2 > [My Second Day](Journey/002/Readme.md)
 - [ ] ☁️ 3 > [](Journey/003/Readme.md)
 - [ ] ☁️ 4 > [](Journey/004/Readme.md)
 - [ ] ☁️ 5 > [](Journey/005/Readme.md)
