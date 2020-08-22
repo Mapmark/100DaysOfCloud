@@ -14,16 +14,17 @@
 Fill in your details where you see this icon ✍️
 We have provided a sample Day Journey entry staring at 0. You can delete this example.
 
-## [✍️ Your Name]'s Cloud Journey
+## Markus's Cloud Journey
 
-[✍️ Introduce yourself]
+Hello, my name is Markus! I am a Security Engineer who is looking to further his skills and learn more about AWS.
 
-[✍️ Tell us why you started this challenge]
+I initially started this challenge to continue my journey and grow my knowledge in AWS. For the past 2 years or so, I've been having a "bug" to do more AWS work, as well as learn more about applying a DevOps mindset. 
 
-[✍️ Tell us where you want to be at the end of the challenge]
+I've been havving a HUGE 'crush' per-se on Terraform, and believe that utilizing Infastructure as Code (IAC) is rapidly becoming a new avenue that can help set up lab environments and create reusable code for different projects. 
 
-- [✍️ Link to your Twitter](https://twitter.com/username)
-- [✍️ Link to your LinkedIn](https://www.linkedin.com/in/username)
+At the end of of the challenge on day 100, I would like to sit and test for my AWS Solutions Architect Proffessional. (SAP-C01) 
+
+- LinkedIn https://www.linkedin.com/in/markus-mabson-86917a133/
 
 ## Stepping out the door
 

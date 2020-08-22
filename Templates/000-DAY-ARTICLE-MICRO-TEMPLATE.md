@@ -10,4 +10,4 @@
 
 
 
-[link](https://www.linkedin.com/posts/markus-mabson-86917a133_mapmark100daysofcloud-activity-6702775453200990208-l1ks)
+[link](link)
