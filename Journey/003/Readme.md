@@ -316,4 +316,4 @@ Moving forward, let's see if we can create additional resources like Ec2 Instanc
 ## Social Proof
 
 
-[LinkedIn](link)
+[LinkedIn](https://www.linkedin.com/posts/markus-mabson-86917a133_day-3100-fun-day-through-terraform-activity-6703379989921861632-eSFt)
