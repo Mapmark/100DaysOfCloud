@@ -1,4 +1,3 @@
-**Add a cover photo like:**
 ![Automate Everything!](./images/AutomateEverything.jpg)
 
 # Terraform - creating a Lab Environment
