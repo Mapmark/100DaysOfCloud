@@ -15,8 +15,8 @@ With Terraform, the goal was to create the following through the use of code:
 - Nat Gateway 
 
 ## Environment
-
 ![Environment](./images/env.png)
+
 
 
 ## Dependencies
