@@ -4,12 +4,12 @@
 
 ## Introduction
 
-Today's mini project was to be able to stand up a lab environment via  Terraform, so whenever I'm ready to spin up my lab network configuration for my lab environment, I can do so without hanving to have the envinroment up 24/7 which accrues costs from AWS.
+Today's mini project was to be able to stand up a lab environment via  Terraform, so whenever I'm ready to spin up my lab network configuration for my lab environment, I can do so without having to have the environment up 24/7 which accrues costs from AWS.
 
 With Terraform, the goal was to create the following through the use of code:
 - Virtual Private Cloud (VPC)
 - Route Tables (public/private)
-- Route Table Assosciations 
+- Route Table Associations 
 - Internet Gateway 
 - Elastic IP
 - Nat Gateway 
@@ -27,7 +27,7 @@ With Terraform, the goal was to create the following through the use of code:
 
 ![iac Diagram](./images/IAC.png)
 
-Infrastrucute as Code (IAC) means writing code to manage configurations and automate provisionining of infrastrucutre in addition to deployments. Essentially, think of writing code to proision and amnager your server, while automating the process. This allows for a rapid deployment of environments without the need of going through multiple pages of documentation and inputting commands into your server. 
+Infrastructure as Code (IAC) means writing code to manage configurations and automate provisioning of infrastructure in addition to deployments. Essentially, think of writing code to provision and manage your server, while automating the process. This allows for a rapid deployment of environments without the need of going through multiple pages of documentation and inputting commands into your server.
 
 ## Cloud Research
 
@@ -38,7 +38,7 @@ https://registry.terraform.io/
 # Terraform 
 Terraform is an IAC that is offered from HashiCorp that is a tool for building, changing, as well as managing infrastructure in a repeatable way. 
 
-State files are created when a project is first initialized, and is referenced to create plans and make changes to your infrastructure. Prior to a change, Terraform does a refresh to update the state with the real world resources. Terraform compares those changes with the state file, to determine whether or not to create a new resource or adjust a particular resource.
+State files are created when a project is first initialized and is referenced to create plans and make changes to your infrastructure. Prior to a change, terraform does a refresh to update the state with the real-world resources. Terraform compares those changes with the state file, to determine whether to create a new resource or adjust a resource.
 
 https://www.terraform.io/
 
@@ -82,7 +82,7 @@ variable "lab_private_subnet" {
 ## main file
 Since we're utilizing AWS, we'll be calling the provider for that cloud. The provider is responsible for understanding API interactions as well as exposing resources. 
 
-We're choosing the region that we'll be using which was defined in our variables file , and using a credentials file that I created for the LabAccount. Instead of exposing my Access/ Secret keys to the world (I highly recommend you do not upload secrets to GitHub) I've created a config file on my local machine and reference my secrets that way. If you wish to use your own credentials, an easy way is to remove the profile line and input your own secrets. 
+We're choosing the region that we'll be using which was defined in our variables file, and using a credentials file that I created for the LabAccount. Instead of exposing my Access/ Secret keys to the world (I highly recommend you do not upload secrets to GitHub) I've created a config file on my local machine and reference my secrets that way. If you wish to use your own credentials, an easy way is to remove the profile line and input your own secrets. 
 
 
 
@@ -101,11 +101,11 @@ provider "aws" {
 
 One of the first resources that we created in the terraform script is allocating a CIDR block for the virtual private cloud(VPC). A VPC is an on-demand configurable pool of shared computing resources allocated within any public cloud environment. 
 
-In this case, we're calling a resource block callled `aws_vpc` and giving it a local name called `labVPC`. The name is used to refer to this resource from elsewhere within the same Terraform module. The resource type and name together server as an identifier for a given resoruce and must be unique with the module. 
+In this case, we're calling a resource block callled `aws_vpc` and giving it a local name called `labVPC`. The name is used to refer to this resource from elsewhere within the same Terraform module. The resource type and name together server as an identifier for a given resource and must be unique with the module. 
 
 We're defining a `cidr_block` that was defined in our variables file and we're allowing dns support to be active within the VPC. 
 
-Finally, we're tagging the instance with the variables defined in the variable file, as well as assosciating a tag of `project` for cost allocation reasons. 
+Finally, we're tagging the instance with the variables defined in the variable file, as well as associating  a tag of `project` for cost allocation reasons. 
 
 ```
 resource "aws_vpc" "labVPC" {
@@ -121,9 +121,9 @@ resource "aws_vpc" "labVPC" {
 ```
 
 ## Subnets
-Next, we're defining our two subnets, one for the public subnet which we will allow for reachabillity through the open internet, and a private subnet which will not be accessible through the internet, because we're not defining a route to the internet gateway. 
+Next, we're defining our two subnets, one for the public subnet which we will allow for reachability  through the open internet, and a private subnet which will not be accessible through the internet, because we're not defining a route to the internet gateway. 
 
-Below, we're creating a resource module named `lab-public_subnet` & and `lab_private_subnet` to be assosciated with the ID of the labVPC that was created in our `labVPC` resource. 
+Below, we're creating a resource module named `lab-public_subnet` & and `lab_private_subnet` to be associated with the ID of the labVPC that was created in our `labVPC` resource. 
 
 Finally, as always, we're defining tags for cost allocation. 
 
@@ -153,7 +153,7 @@ resource "aws_subnet" "lab_private_subnet" {
 ## Route Tables
 A Route table consists of a set of rules that are used to determine where network traffic from a subnet or gateway is directed. 
 
-When a VPC is created, a route table is automatically created called a `main route table` where it controls the routing for all subnets taht are not explicitly associated with any other route table. In this case we are creating a `custom route table` in which we created for the VPC.
+When a VPC is created, a route table is automatically created called a `main route table` where it controls the routing for all subnets that are not explicitly associated with any other route table. In this case we are creating a `custom route table` in which we created for the VPC.
 
 In the `lab_public_RT`  resource, we are creating the resource in the VPC that we created earlier, identified by the ID of the VPC and creating a default route to send all IPv4 traffic to wherever this route points. In this case, we're sending all of the traffic out the Internet Gateway.
 
@@ -201,7 +201,7 @@ resource "aws_route_table" "lab_private_RT" {
 ```
 
 ## Internet Gateway
-An internet gateway(IGW), is a redundant, and highly available VPC component that allows communiation between your VPC as well as the internet. An IGW supports both, IPv4 traffic as well as IPv6 traffic. 
+An internet gateway(IGW), is a redundant, and highly available VPC component that allows communication between your VPC as well as the internet. An IGW supports both, IPv4 traffic as well as IPv6 traffic. 
 
 An Internet gateway serves two purposes
 - Target in your VPC route tables for routable traffic
@@ -224,7 +224,7 @@ An Elastic IP (EIP) address is a static IPv4 address that is created for dynamic
 
 For this section of the script, we're creating a resource called `NGW-eip` and creating appropriate tags for this resource. 
 
-we're passing the  boolean argument `true` into `vpc` to tell the EIP if it is in a VPC or not. 
+we're passing the  Boolean argument `true` into `vpc` to tell the EIP if it is in a VPC or not. 
 
 ```
 #Elastic IP
@@ -263,7 +263,7 @@ resource "aws_nat_gateway" "lab_NGW" {
 ```
 
 ## Subnet Associations
-In these two resources, we're assosciating a subnet with a specific route table.  This association causes traffic originating from the subnet to be routed according to the routes in the route table.
+In these two resources, we're associating a subnet with a specific route table.  This association causes traffic originating from the subnet to be routed according to the routes in the route table.
 
 ```
 #public
@@ -286,7 +286,7 @@ All commands are applied in the root directory.
 
 `Terraform init`
 
-The terraform init command is used to initalize a working directroy containing Terraform configuration files. 
+The terraform init command is used to initialize a working directory containing Terraform configuration files. 
 
 `Terraform plan`
 
@@ -301,7 +301,7 @@ you can pass the `--auto-approve` flag to skip verification
 
 `terraform destroy`
 
-Infastructure that is managed by Terraform will be destroyed. 
+Infrastructure  that is managed by Terraform will be destroyed. 
 
 Terminating the Environment 
 ## ☁️ Cloud Outcome
@@ -310,7 +310,7 @@ This was a great mini project that I was able to accomplish. Honestly, it took l
 
 ## Next Steps
 
-Moving forward, let's see if we can create additional resources like Ec2 Instances and through it into the environment! I won't go too deep into the resource creation for the network side again in the next follow up, since i've already outlayed it in Day 3. 
+Moving forward, let's see if we can create additional resources like Ec2 Instances and through it into the environment! I won't go too deep into the resource creation for the network side again in the next follow up, since I've already outlined it in Day 3. 
 
 ## Social Proof
 
